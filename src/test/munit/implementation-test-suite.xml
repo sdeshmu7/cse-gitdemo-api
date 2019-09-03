@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:http="http://www.mulesoft.org/schema/mule/http"
+	xmlns:validation="http://www.mulesoft.org/schema/mule/validation" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:munit="http://www.mulesoft.org/schema/mule/munit" xmlns:munit-tools="http://www.mulesoft.org/schema/mule/munit-tools"
+	xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" xsi:schemaLocation="
+		http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+		http://www.mulesoft.org/schema/mule/munit http://www.mulesoft.org/schema/mule/munit/current/mule-munit.xsd
+		http://www.mulesoft.org/schema/mule/munit-tools  http://www.mulesoft.org/schema/mule/munit-tools/current/mule-munit-tools.xsd
+http://www.mulesoft.org/schema/mule/validation http://www.mulesoft.org/schema/mule/validation/current/mule-validation.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd">
+	<munit:config name="implementation-test-suite.xml" />
+	<validation:config name="Validation_Config" doc:name="Validation Config" doc:id="8429774a-db49-461b-9cc8-00bd2c313e9f" />
+	<munit:test name="implementation-test-suite-getFlightsTest" doc:id="f772943a-c067-46b2-baa4-1af112a0fbf0" description="Test">
+		<munit:execution >
+			<flow-ref doc:name="Flow-ref to getFlights" doc:id="96c1cbed-057b-447c-a077-666aa67a6e0b" name="getFlights"/>
+			<validation:is-not-null doc:name="Is not null" doc:id="f31b92b6-82d4-4523-b4b1-81fa6a0b9c08" config-ref="Validation_Config" value="true"/>
+		</munit:execution>
+	</munit:test>
+
+</mule>
